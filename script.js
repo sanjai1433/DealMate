@@ -58,7 +58,17 @@ const defaultDeals = [
     discount: "35% OFF",
     store: "Meesho",
     link: "https://www.meesho.com/search?q=shoes"
-  }
+  },
+  {
+    title: "Bluetooth Speaker",
+    description: "Portable Bluetooth Speaker",
+    price: "₹999",
+    oldPrice: "₹1999",
+    discount: "50% OFF",
+    store: "Flipkart",
+    image: "images/speaker.jpg",
+    link: "https://www.flipkart.com/search?q=bluetooth+speaker"
+   }
 ];
 
 // Admin-la save panna products
