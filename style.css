@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8fc;
+  color: #222;
+}
+
+/* Header */
+header {
+  width: 100%;
+  padding: 18px 6%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+header h1 {
+  color: #6c4ce4;
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  margin: 25px auto;
+  width: 90%;
+  min-height: 230px;
+  padding: 40px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #e9e2ff, #f5efff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h2 {
+  font-size: 34px;
+  color: #30205f;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.hero a,
+.hero button {
+  display: inline-block;
+  width: fit-content;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #704de5;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Products section */
+#deals {
+  width: 90%;
+  margin: 35px auto;
+}
+
+#deals h2 {
+  font-size: 27px;
+  margin-bottom: 22px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+}
+
+/* Product card */
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #666;
+}
+
+.price {
+  margin: 12px 0;
+}
+
+.price strong {
+  color: #159447;
+  font-size: 19px;
+  margin-right: 8px;
+}
+
+.price del {
+  color: #999;
+  font-size: 14px;
+}
+
+.discount {
+  display: inline-block;
+  background: #ffe5e5;
+  color: #e53935;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.product-card a {
+  display: block;
+  background: #704de5;
+  color: white;
+  text-decoration: none;
+  padding: 11px;
+  border-radius: 7px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* Search and filter */
+input,
+select {
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  margin: 8px;
+  max-width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 25px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 130px;
+  }
+
+  .product-card h3 {
+    font-size: 15px;
+  }
+}
+/* DealMate Footer */
+.footer {
+  background: #17152b;
+  color: white;
+  text-align: center;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer h2 {
+  color: #9b83ff;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #ddd;
+  margin: 12px 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 25px 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #9b83ff;
+}
+
+.footer .copyright {
+  border-top: 1px solid #444;
+  padding-top: 18px;
+  font-size: 13px;
+  margin-top: 25px;
+}
+.about {
+  background: #f4f0ff;
+  text-align: center;
+  padding: 45px 25px;
+  margin: 30px 20px;
+  border-radius: 15px;
+}
+
+.about h2 {
+  color: #6c45d9;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 10px auto;
+}
+.contact {
+  background: #f4f0ff;
+  text-align: center;
+  padding: 45px 25px;
+  margin: 30px 20px;
+  border-radius: 15px;
+}
+
+.contact h2 {
+  color: #6c45d9;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card img {
+    height: 130px;
+    object-fit: contain;
+  }
+
+  .about, .contact {
+    margin: 15px 10px;
+    padding: 30px 15px;
+  }
+}

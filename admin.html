@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealMate Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      padding: 25px;
+    }
+    .admin {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #0002;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+    #message {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin">
+    <h1>DealMate Admin Panel</h1>
+    <h3>Add New Product</h3>
+
+    <input id="name" placeholder="Product Name">
+    <input id="description" placeholder="Description">
+    <input id="price" placeholder="Product Price">
+    <input id="oldPrice" placeholder="Old Price">
+    <input id="discount" placeholder="Discount (e.g. 20% OFF)">
+
+    <select id="store">
+      <option value="Flipkart">Flipkart</option>
+      <option value="Amazon">Amazon</option>
+      <option value="Meesho">Meesho</option>
+    </select>
+
+    <input id="image" placeholder="Image path (e.g. images/watch.jpg)">
+    <input id="link" placeholder="Product link">
+
+    <button onclick="addProduct()">Add Product</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function addProduct() {
+      const product = {
+        name: document.getElementById("name").value.trim(),
+        description: document.getElementById("description").value.trim(),
+        price: document.getElementById("price").value.trim(),
+        oldPrice: document.getElementById("oldPrice").value.trim(),
+        discount: document.getElementById("discount").value.trim(),
+        store: document.getElementById("store").value,
+        image: document.getElementById("image").value.trim(),
+        link: document.getElementById("link").value.trim()
+      };
+
+      if (!product.name || !product.price || !product.link) {
+        document.getElementById("message").textContent =
+          "Please enter product name, price and link!";
+        return;
+      }
+
+      const products = JSON.parse(
+        localStorage.getItem("dealMateProducts") || "[]"
+      );
+
+      products.push(product);
+
+      localStorage.setItem(
+        "dealMateProducts",
+        JSON.stringify(products)
+      );
+
+      document.getElementById("message").textContent =
+        "Product saved successfully!";
+
+      document.querySelectorAll("input").forEach(input => {
+        input.value = "";
+      });
+    }
+  </script>
+</body>
+</html>
