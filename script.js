@@ -1,16 +1,18 @@
 const defaultDeals = [
   {
-    title: "iPhone 17 pro",
-    description: "Apple iPhone 17 pro 256 cosmic orange",
+    title: "iPhone 17 Pro",
+    category: "iPhone",
+    description: "Apple iPhone 17 Pro 256GB Cosmic Orange",
     image: "images/iphone.jpg",
     price: "₹1,27,900",
     oldPrice: "₹1,34,900",
     discount: "5% OFF",
     store: "Amazon",
     link: "https://link.amazon/B02Yv29D6"
-  },   
+  },
   {
     title: "MacBook",
+    category: "MacBook",
     description: "Apple MacBook Air M5",
     image: "images/macbook.jpg",
     price: "₹89,999",
@@ -21,6 +23,7 @@ const defaultDeals = [
   },
   {
     title: "Headphones",
+    category: "Headphones",
     description: "Wireless Headphones",
     image: "images/headphones.jpg",
     price: "₹1,499",
@@ -31,6 +34,7 @@ const defaultDeals = [
   },
   {
     title: "Smart Watch",
+    category: "Smart Watch",
     description: "Smart Watch",
     image: "images/watch.jpg",
     price: "₹999",
@@ -41,6 +45,7 @@ const defaultDeals = [
   },
   {
     title: "Fashion",
+    category: "Fashion",
     description: "Men Fashion",
     image: "images/fashion.jpg",
     price: "₹499",
@@ -51,6 +56,7 @@ const defaultDeals = [
   },
   {
     title: "Shoes",
+    category: "Shoes",
     description: "Stylish Shoes",
     image: "images/shoes.jpg",
     price: "₹799",
@@ -61,14 +67,15 @@ const defaultDeals = [
   },
   {
     title: "Bluetooth Speaker",
+    category: "Bluetooth Speaker",
     description: "Portable Bluetooth Speaker",
+    image: "images/speaker.jpg",
     price: "₹999",
-    oldPrice: "₹1999",
+    oldPrice: "₹1,999",
     discount: "50% OFF",
     store: "Amazon",
-    image: "images/speaker.jpg",
     link: "https://link.amazon/B0ixHMvd2"
-   }
+  }
 ];
 
 // Admin-la save panna products
@@ -78,14 +85,18 @@ try {
   savedDeals = JSON.parse(
     localStorage.getItem("dealMateProducts") || "[]"
   );
-  if (!Array.isArray(savedDeals)) savedDeals = [];
+
+  if (!Array.isArray(savedDeals)) {
+    savedDeals = [];
+  }
 } catch (error) {
   savedDeals = [];
 }
 
-// Admin product details normalize pannuvom
+// Admin products-ku category set pannuvom
 const adminDeals = savedDeals.map(product => ({
   title: product.title || product.name || "Product",
+  category: product.category || product.title || product.name || "Other",
   description: product.description || product.title || product.name || "Special Deal",
   image: product.image || "",
   price: product.price || "",
@@ -95,17 +106,28 @@ const adminDeals = savedDeals.map(product => ({
   link: product.link || "#"
 }));
 
-// Default + Admin products
 const deals = [...defaultDeals, ...adminDeals];
 
+// HTML elements
+const categoryList = document.getElementById("categoryList");
+const categoryDeals = document.getElementById("categoryDeals");
+const categoryTitle = document.getElementById("categoryTitle");
+const backButton = document.getElementById("backButton");
 const productsContainer = document.getElementById("products");
 const searchInput = document.getElementById("search");
-const storeFilter = document.getElementById("storeFilter");
 
+let selectedCategory = "";
+
+// Product cards display
 function showDeals(productList) {
   if (!productsContainer) return;
 
   productsContainer.innerHTML = "";
+
+  if (productList.length === 0) {
+    productsContainer.innerHTML = "<p>No offers found in this category.</p>";
+    return;
+  }
 
   productList.forEach(product => {
     const card = document.createElement("div");
@@ -114,6 +136,7 @@ function showDeals(productList) {
     const img = document.createElement("img");
     img.src = product.image;
     img.alt = product.title;
+
     img.onerror = function () {
       this.style.display = "none";
     };
@@ -162,26 +185,52 @@ function showDeals(productList) {
   });
 }
 
-// Search and store filter
+// Category open
+function openCategory(category) {
+  selectedCategory = category;
+
+  categoryTitle.textContent = category + " Offers";
+
+  categoryList.hidden = true;
+  categoryDeals.hidden = false;
+
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  filterDeals();
+
+  categoryDeals.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// Category buttons
+if (categoryList) {
+  categoryList.addEventListener("click", function (event) {
+    const button = event.target.closest(".category-card");
+
+    if (!button) return;
+
+    openCategory(button.dataset.category);
+  });
+}
+
+// Search within selected category
 function filterDeals() {
   const searchText = searchInput
     ? searchInput.value.toLowerCase().trim()
     : "";
 
-  const selectedStore = storeFilter
-    ? storeFilter.value
-    : "All";
-
   const filteredDeals = deals.filter(product => {
+    const matchesCategory =
+      product.category === selectedCategory;
+
     const matchesSearch =
       product.title.toLowerCase().includes(searchText) ||
       product.description.toLowerCase().includes(searchText);
 
-    const matchesStore =
-      selectedStore === "All" ||
-      product.store === selectedStore;
-
-    return matchesSearch && matchesStore;
+    return matchesCategory && matchesSearch;
   });
 
   showDeals(filteredDeals);
@@ -191,9 +240,19 @@ if (searchInput) {
   searchInput.addEventListener("input", filterDeals);
 }
 
-if (storeFilter) {
-  storeFilter.addEventListener("change", filterDeals);
-}
+// Back to categories
+if (backButton) {
+  backButton.addEventListener("click", function () {
+    categoryDeals.hidden = true;
+    categoryList.hidden = false;
+    selectedCategory = "";
 
-// Show all products
-showDeals(deals);
+    if (searchInput) {
+      searchInput.value = "";
+    }
+
+    document.getElementById("categories").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+}
