@@ -7,7 +7,7 @@ const defaultDeals = [
     oldPrice: "₹79,999",
     discount: "10% OFF",
     store: "Flipkart",
-    link: "https://www.flipkart.com/search?q=iphone"
+    link: "https://link.amazon/B0f0Ey3Yf"
   },
   {
     title: "MacBook",
