@@ -11,6 +11,17 @@ const defaultDeals = [
     link: "https://link.amazon/B02Yv29D6"
   },
   {
+    title: "iPhone 17 Pro Max",
+    category: "iPhone",
+    description: "Apple iPhone 17 Pro Max",
+    image: "images/iphone17promax.png",
+    price: "₹1,44,900",
+    oldPrice: "1,49,900",
+    discount: "3% OFF",
+    store: "Amazon",
+    link: "https://link.amazon/B032xdg3P"
+  },
+  {
     title: "MacBook",
     category: "MacBook",
     description: "Apple MacBook Air M5",
