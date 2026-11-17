@@ -29,6 +29,8 @@ header h1 {
 nav {
   display: flex;
   gap: 25px;
+  padding: 15px 6%;
+  background: white;
 }
 
 nav a {
@@ -61,37 +63,108 @@ nav a {
   margin-bottom: 18px;
 }
 
-.hero a,
-.hero button {
-  display: inline-block;
-  width: fit-content;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  background: #704de5;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Products section */
-#deals {
+/* Categories */
+.category-section {
   width: 90%;
   margin: 35px auto;
 }
 
-#deals h2 {
+.category-section > h2 {
   font-size: 27px;
-  margin-bottom: 22px;
+  margin-bottom: 10px;
 }
 
+.category-section > p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px;
+}
+
+.category-card {
+  background: white;
+  border: none;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(108,76,228,0.2);
+}
+
+.category-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.category-card h3 {
+  color: #30205f;
+  font-size: 18px;
+}
+
+/* Category Offers */
+.category-deals {
+  width: 90%;
+  margin: 35px auto;
+}
+
+.category-deals[hidden],
+.category-section[hidden] {
+  display: none !important;
+}
+
+.category-deals h2 {
+  font-size: 27px;
+  margin: 20px 0;
+}
+
+.back-button {
+  background: #704de5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #5634c5;
+}
+
+/* Search */
+.filters {
+  margin: 15px 0 25px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  width: 100%;
+  max-width: 350px;
+  font-size: 15px;
+}
+
+/* Products */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 22px;
 }
 
-/* Product card */
+/* Product Card */
 .product-card {
   background: white;
   padding: 15px;
@@ -162,55 +235,37 @@ nav a {
   font-weight: bold;
 }
 
-/* Search and filter */
-input,
-select {
-  padding: 11px;
-  border: 1px solid #ddd;
-  border-radius: 7px;
-  margin: 8px;
-  max-width: 100%;
+.product-card a:hover {
+  background: #5634c5;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  header {
-    padding: 15px;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  nav {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .hero {
-    padding: 25px;
-  }
-
-  .hero h2 {
-    font-size: 26px;
-  }
-
-  .products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .product-card {
-    padding: 10px;
-  }
-
-  .product-card img {
-    height: 130px;
-  }
-
-  .product-card h3 {
-    font-size: 15px;
-  }
+/* About and Contact */
+.about,
+.contact {
+  background: #f4f0ff;
+  text-align: center;
+  padding: 45px 25px;
+  margin: 30px 20px;
+  border-radius: 15px;
 }
-/* DealMate Footer */
+
+.about h2,
+.contact h2 {
+  color: #6c45d9;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about p,
+.contact p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 10px auto;
+}
+
+/* Footer */
 .footer {
   background: #17152b;
   color: white;
@@ -254,67 +309,87 @@ select {
   font-size: 13px;
   margin-top: 25px;
 }
-.about {
-  background: #f4f0ff;
-  text-align: center;
-  padding: 45px 25px;
-  margin: 30px 20px;
-  border-radius: 15px;
-}
 
-.about h2 {
-  color: #6c45d9;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.about p {
-  color: #444;
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 750px;
-  margin: 10px auto;
-}
-.contact {
-  background: #f4f0ff;
-  text-align: center;
-  padding: 45px 25px;
-  margin: 30px 20px;
-  border-radius: 15px;
-}
-
-.contact h2 {
-  color: #6c45d9;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.contact p {
-  color: #444;
-  font-size: 16px;
-  line-height: 1.8;
-}
+/* Mobile Responsive */
 @media (max-width: 600px) {
   header {
-    padding: 20px 10px;
-  }
-
-  nav {
+    padding: 15px;
     flex-wrap: wrap;
     gap: 12px;
   }
 
-  .products {
-    grid-template-columns: repeat(2, 1fr);
+  header h1 {
+    font-size: 24px;
+  }
+
+  nav {
+    gap: 15px;
+    padding: 12px 15px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 25px;
+    min-height: 190px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .category-section,
+  .category-deals {
+    width: 92%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+  }
+
+  .category-card {
+    padding: 10px;
+  }
+
+  .category-card img {
+    height: 120px;
+  }
+
+  .category-card h3 {
+    font-size: 15px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-card {
+    padding: 10px;
   }
 
   .product-card img {
     height: 130px;
-    object-fit: contain;
   }
 
-  .about, .contact {
+  .product-card h3 {
+    font-size: 15px;
+  }
+
+  .product-card p {
+    font-size: 12px;
+  }
+
+  .price strong {
+    font-size: 16px;
+  }
+
+  .about,
+  .contact {
     margin: 15px 10px;
     padding: 30px 15px;
   }
