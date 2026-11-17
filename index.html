@@ -15,64 +15,100 @@
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#deals">All Deals</a>
-    <a href="#deals">Offers</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <main id="home">
+
     <section class="hero">
       <h2>Today's Best Deals 🔥</h2>
-      <p>Amazing offers from your favourite stores.</p>
+      <p>Discover amazing products at great prices.</p>
     </section>
 
-    <h2 id="deals">Latest Offers</h2>
-    <p>As an Amazon Associate I earn from qualifying purchases.</p>
-    <div class="filters">
-  <input
-    type="text"
-    id="search"
-    placeholder="Search products..."
-  >
+    <section id="categories" class="category-section">
+      <h2>Shop by Category</h2>
+      <p>Choose a category to explore offers.</p>
 
-  <select id="storeFilter">
-    <option value="All">All Stores</option>
-    <option value="Flipkart">Flipkart</option>
-    <option value="Amazon">Amazon</option>
-    <option value="Meesho">Meesho</option>
-  </select>
-</div>
-    <div id="products" class="products"></div>
+      <div id="categoryList" class="category-grid">
+
+        <button class="category-card" data-category="iPhone">
+          <img src="images/iphone.jpg" alt="iPhone">
+          <h3>iPhone</h3>
+        </button>
+
+        <button class="category-card" data-category="MacBook">
+          <img src="images/macbook.jpg" alt="MacBook">
+          <h3>MacBook</h3>
+        </button>
+
+        <button class="category-card" data-category="Headphones">
+          <img src="images/headphones.jpg" alt="Headphones">
+          <h3>Headphones</h3>
+        </button>
+
+        <button class="category-card" data-category="Smart Watch">
+          <img src="images/watch.jpg" alt="Smart Watch">
+          <h3>Smart Watch</h3>
+        </button>
+
+        <button class="category-card" data-category="Fashion">
+          <img src="images/fashion.jpg" alt="Fashion">
+          <h3>Fashion</h3>
+        </button>
+
+        <button class="category-card" data-category="Shoes">
+          <img src="images/shoes.jpg" alt="Shoes">
+          <h3>Shoes</h3>
+        </button>
+
+        <button class="category-card" data-category="Bluetooth Speaker">
+          <img src="images/speaker.jpg" alt="Bluetooth Speaker">
+          <h3>Bluetooth Speaker</h3>
+        </button>
+
+      </div>
+    </section>
+
+    <section id="categoryDeals" class="category-deals" hidden>
+      <button id="backButton" class="back-button">← Back to Categories</button>
+      <h2 id="categoryTitle">Category Offers</h2>
+      <div class="filters">
+        <input type="text" id="search" placeholder="Search products...">
+      </div>
+      <div id="products" class="products"></div>
+    </section>
+
   </main>
-<section id="about" class="about">
-  <h2>About DealMate</h2>
-  <p>Welcome to DealMate! We help you discover amazing deals on smartphones, laptops, fashion, shoes and more.</p>
-  <p>Our goal is to make your online shopping simple, smart and affordable.</p>
-</section>
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>Have questions or suggestions?</p>
-  <p>We would love to hear from you!</p>
-  <p>Email: dealmate@example.com</p>
-</section>
-  <footer>
-    <p>©️ 2026 DealMate. All rights reserved.</p>
-    <p>We may earn commission from eligible purchases.</p>
+
+  <section id="about" class="about">
+    <h2>About DealMate</h2>
+    <p>Welcome to DealMate! We help you discover amazing deals on smartphones, laptops, fashion, shoes and more.</p>
+    <p>Our goal is to make your online shopping simple, smart and affordable.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or suggestions?</p>
+    <p>We would love to hear from you!</p>
+    <p>Email: dealmate@example.com</p>
+  </section>
+
+  <footer class="footer">
+    <h2>DealMate</h2>
+    <p>Your Smart Shopping Partner</p>
+    <p>As an Amazon Associate I earn from qualifying purchases.</p>
+
+    <div class="footer-links">
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+    <p class="copyright">©️ 2026 DealMate. All Rights Reserved.</p>
   </footer>
 
   <script src="script.js"></script>
-  <footer class="footer">
-  <h2>DealMate</h2>
-  <p>Your Smart Shopping Partner</p>
-
-  <div class="footer-links">
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact Us</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </div>
-
-  <p class="copyright">
-    ©️ 2026 DealMate. All Rights Reserved.
-  </p>
-</footer>
 </body>
 </html>
