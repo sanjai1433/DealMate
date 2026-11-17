@@ -33,6 +33,17 @@ const defaultDeals = [
     link: "https://link.amazon/B08BfjcTi"
   },
   {
+    title: "iPhone 16",
+    category: "iPhone",
+    description: "Apple iPhone 16",
+    image: "images/iphone16.jpg",
+    price: "₹79,990",
+    oldPrice: "89,900",
+    discount: "11% OFF",
+    store: "Amazon",
+    link: "https://link.amazon/B04ag9eib"
+  },
+  {
     title: "MacBook",
     category: "MacBook",
     description: "Apple MacBook Air M5",
