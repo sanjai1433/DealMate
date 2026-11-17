@@ -7,7 +7,7 @@ const defaultDeals = [
     oldPrice: "₹79,999",
     discount: "10% OFF",
     store: "Amazon",
-    link: "https://link.amazon/B0gw4XICk"
+    link: "https://link.amazon/B03QlJNsX"
   },
   {
     title: "MacBook",
