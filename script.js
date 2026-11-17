@@ -22,6 +22,17 @@ const defaultDeals = [
     link: "https://link.amazon/B032xdg3P"
   },
   {
+    title: "iPhone 17",
+    category: "iPhone",
+    description: "Apple iPhone 17",
+    image: "images/iphone17.jpg",
+    price: "₹1,19,990",
+    oldPrice: "1,24,900",
+    discount: "4% OFF",
+    store: "Amazon",
+    link: "https://link.amazon/B08BfjcTi"
+  },
+  {
     title: "MacBook",
     category: "MacBook",
     description: "Apple MacBook Air M5",
