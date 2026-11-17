@@ -7,8 +7,8 @@ const defaultDeals = [
     oldPrice: "₹79,999",
     discount: "10% OFF",
     store: "Amazon",
-    link: "https://link.amazon/B03QlJNsX"
-  },
+    link: "https://link.amazon/B02Yv29D6"
+  },   
   {
     title: "MacBook",
     description: "Apple MacBook Air M5",
