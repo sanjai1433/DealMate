@@ -1,11 +1,11 @@
 const defaultDeals = [
   {
-    title: "iPhone",
-    description: "Apple iPhone",
+    title: "iPhone 17 pro",
+    description: "Apple iPhone 17 pro 256 cosmic orange",
     image: "images/iphone.jpg",
-    price: "₹69,999",
-    oldPrice: "₹79,999",
-    discount: "10% OFF",
+    price: "₹1,27,900",
+    oldPrice: "₹1,34,900",
+    discount: "5% OFF",
     store: "Amazon",
     link: "https://link.amazon/B02Yv29D6"
   },   
