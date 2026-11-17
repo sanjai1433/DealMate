@@ -17,7 +17,7 @@ const defaultDeals = [
     oldPrice: "₹99,999",
     discount: "15% OFF",
     store: "Amazon",
-    link: "https://www.amazon.in/s?k=macbook+air+m5"
+    link: "https://link.amazon/B0dVKSAa7"
   },
   {
     title: "Headphones",
@@ -27,7 +27,7 @@ const defaultDeals = [
     oldPrice: "₹2,499",
     discount: "40% OFF",
     store: "Flipkart",
-    link: "https://www.flipkart.com/search?q=wireless+headphones"
+    link: "https://link.amazon/B06ItKAou"
   },
   {
     title: "Smart Watch",
@@ -37,7 +37,7 @@ const defaultDeals = [
     oldPrice: "₹1,999",
     discount: "50% OFF",
     store: "Meesho",
-    link: "https://www.meesho.com/search?q=smart%20watch"
+    link: "https://link.amazon/B01rqelNI"
   },
   {
     title: "Fashion",
@@ -47,7 +47,7 @@ const defaultDeals = [
     oldPrice: "₹999",
     discount: "30% OFF",
     store: "Meesho",
-    link: "https://www.meesho.com/search?q=men%20fashion"
+    link: "https://link.amazon/B00PhxSHL"
   },
   {
     title: "Shoes",
@@ -57,7 +57,7 @@ const defaultDeals = [
     oldPrice: "₹1,499",
     discount: "35% OFF",
     store: "Meesho",
-    link: "https://www.meesho.com/search?q=shoes"
+    link: "https://link.amazon/B01SoxiRx"
   },
   {
     title: "Bluetooth Speaker",
@@ -67,7 +67,7 @@ const defaultDeals = [
     discount: "50% OFF",
     store: "Flipkart",
     image: "images/speaker.jpg",
-    link: "https://www.flipkart.com/search?q=bluetooth+speaker"
+    link: "https://link.amazon/B0ixHMvd2"
    }
 ];
 
