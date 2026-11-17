@@ -6,7 +6,7 @@ const defaultDeals = [
     price: "₹69,999",
     oldPrice: "₹79,999",
     discount: "10% OFF",
-    store: "Flipkart",
+    store: "Amazon",
     link: "https://link.amazon/B0f0Ey3Yf"
   },
   {
@@ -26,7 +26,7 @@ const defaultDeals = [
     price: "₹1,499",
     oldPrice: "₹2,499",
     discount: "40% OFF",
-    store: "Flipkart",
+    store: "Amazon",
     link: "https://link.amazon/B06ItKAou"
   },
   {
@@ -36,7 +36,7 @@ const defaultDeals = [
     price: "₹999",
     oldPrice: "₹1,999",
     discount: "50% OFF",
-    store: "Meesho",
+    store: "Amazon",
     link: "https://link.amazon/B01rqelNI"
   },
   {
@@ -46,7 +46,7 @@ const defaultDeals = [
     price: "₹499",
     oldPrice: "₹999",
     discount: "30% OFF",
-    store: "Meesho",
+    store: "Amazon",
     link: "https://link.amazon/B00PhxSHL"
   },
   {
@@ -56,7 +56,7 @@ const defaultDeals = [
     price: "₹799",
     oldPrice: "₹1,499",
     discount: "35% OFF",
-    store: "Meesho",
+    store: "Amazon",
     link: "https://link.amazon/B01SoxiRx"
   },
   {
@@ -65,7 +65,7 @@ const defaultDeals = [
     price: "₹999",
     oldPrice: "₹1999",
     discount: "50% OFF",
-    store: "Flipkart",
+    store: "Amazon",
     image: "images/speaker.jpg",
     link: "https://link.amazon/B0ixHMvd2"
    }
